@@ -31,10 +31,10 @@ ESP8266HTTPUpdateServer httpUpdater;
 //   NEO_RGBW    Pixels are wired for RGBW bitstream (NeoPixel RGBW products)
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
-const char* ssid1 = "samalet";
-const char* password1 = "samalet123";
-const char* ssid2 = "MN6";
-const char* password2 = "AAACCEEF";
+const char* ssid1 = "";
+const char* password1 = "";
+const char* ssid2 = "";
+const char* password2 = "";
 const int MODE_SIMPLE = 0;
 const int MODE_ALL = 1;
 const int MODE_RAINBOW = 2;
@@ -64,26 +64,26 @@ const int idx_ledws = 1000; //index ws2812 for domoticz
 
 /************************* WiFi Access Point *********************************/
 
-#define WLAN_SSID       "samalet"
-#define WLAN_PASS       "samalet123"
+#define WLAN_SSID       ""
+#define WLAN_PASS       ""
 
 /************************* Adafruit.io Setup *********************************/
 
-#define AIO_SERVER      "umodom.ru"
+#define AIO_SERVER      ""
 #define AIO_SERVERPORT  1883                   // use 8883 for SSL
-#define AIO_USERNAME    "maxim"
-#define AIO_KEY         "ctdfcnjgjkm"
+#define AIO_USERNAME    ""
+#define AIO_KEY         ""
 
 WiFiClient client;
 Adafruit_MQTT_Client mqtt(&client, AIO_SERVER, AIO_SERVERPORT, AIO_USERNAME, AIO_KEY);
 
-String LOCALIP="192.168.0.49";
+String LOCALIP="192.168.0.5";
 int CurrentLedMode = MODE_OFF; 
 volatile boolean needUpdate = true;
 volatile boolean setBreak = false;
 String WWLedState = "off";
 uint16_t lux = 0;
-//#define LOCALIP "192.168.0.49"
+//#define LOCALIP "192.168.0.5"
 
 //WiFiServer server(80);
 ESP8266WebServer server ( 80 );
